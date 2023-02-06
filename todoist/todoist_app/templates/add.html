@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+{% block title %} Edit page {% endblock %}
+
+{% block content %}
+<div class="container">
+  <form class="add-todo-form" method="post">
+    {% csrf_token %}
+    <div class="task-input">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+    </div>
+    <div class="task-input">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description">
+    </div>
+    <div class="task-input">
+    <label for="due_time">Due time</label>
+    <input type="datetime-local" name="due_time" id="due_time">
+    </div>
+    <input type="submit" class="submit-btn" value="Save">
+  </form>
+</div>
+{% endblock %}
